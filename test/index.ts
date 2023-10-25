@@ -31,6 +31,17 @@ const start = async () => {
 
   const compiler = new Compiler(config);
 
+  // Bad code
+  const badCode = code.replace(
+    "event Approval(address indexed src, address indexed guy, uint wad);",
+    ""
+  );
+  console.log(
+    "\n> Checking the bad code, the compiler should return an error of no event description..."
+  );
+  await compiler.compileSingleFile(badCode, "WETH9");
+
+  console.log("\n> Checking the correct code...");
   // Recommended for the beauty of the code.
   const formatted = await compiler.format(code);
 
