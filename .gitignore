@@ -1,0 +1,4 @@
+node_modules
+
+# Tests
+test/results

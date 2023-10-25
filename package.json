@@ -1,0 +1,23 @@
+{
+  "name": "solidity-compiler",
+  "version": "0.0.1",
+  "description": "This repository provides a Solidity compiler implemented in TypeScript for easy use of the compiler inside applications.",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node test/index.ts"
+  },
+  "keywords": [],
+  "author": "0xdino",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "prettier": "^3.0.3",
+    "prettier-plugin-solidity": "^1.1.3",
+    "solc": "^0.8.19",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "tsconfig-paths": "^4.2.0"
+  }
+}
