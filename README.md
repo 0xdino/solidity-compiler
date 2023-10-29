@@ -13,7 +13,7 @@ For the test run the command:
 
 ```shell
 npm install
-npm run test
+npm run start
 ```
 
 This repository will be updated.
