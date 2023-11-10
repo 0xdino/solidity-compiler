@@ -8,6 +8,7 @@ import {
   IMetadata,
   ICompile,
 } from "@/src/interfaces/ICompiler";
+import { ContractFactory } from "ethers";
 
 export class Compiler {
   private readonly _config: IConfig;
@@ -45,13 +46,17 @@ export class Compiler {
 
       const evm: IEvm = res["contracts"][target][name].evm as IEvm;
 
+      const deployedBytecode = ContractFactory.fromSolidity(
+        res["contracts"][target][name]
+      ).bytecode;
+
       const metadata = JSON.parse(
         res["contracts"][target][name].metadata
       ) as IMetadata;
 
       const bytecode: IBytecode = {
         bytecode: evm.bytecode.object,
-        deployedBytecode: evm.deployedBytecode.object,
+        deployedBytecode,
       } as IBytecode;
 
       const compile: ICompile = { bytecode, evm, metadata } as ICompile;

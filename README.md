@@ -17,3 +17,5 @@ npm run start
 ```
 
 This repository will be updated.
+
+In the latest update, the ethers library has been added, which allows you to get adapted code for calling transactions in large smart contracts.

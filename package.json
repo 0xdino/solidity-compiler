@@ -10,6 +10,7 @@
   "author": "0xdino",
   "license": "MIT",
   "dependencies": {
+    "ethers": "^6.8.1",
     "fs": "^0.0.1-security",
     "path": "^0.12.7",
     "prettier": "^3.0.3",
