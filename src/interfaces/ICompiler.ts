@@ -1,72 +1,72 @@
 export interface IMethodIdentifiers {
-  [methodName: string]: string;
+  [methodName: string]: Readonly<string>;
 }
 
 export interface ICompilationTarget {
-  [contract: string]: string;
+  [contract: string]: Readonly<string>;
 }
 
 export interface ISources {
   [contract: string]: {
-    keccak256: string;
-    license: string;
-    urls: string[];
+    keccak256: Readonly<string>;
+    license: Readonly<string>;
+    urls: Readonly<string[]>;
   };
 }
 
 export interface IBytecode {
-  bytecode: string;
-  deployedBytecode: string;
+  bytecode: Readonly<string>;
+  deployedBytecode: Readonly<string>;
 }
 
 export interface IEvm {
-  bytecode: {
-    functionDebugData: any;
-    generatedSources: any;
-    linkReferences: any;
-    object: string;
-    opcodes: string;
-    sourceMap: string;
-  };
-  deployedBytecode: {
-    functionDebugData: any;
-    generatedSources: any;
-    immutableReferences: any;
-    linkReferences: any;
-    object: string;
-    opcodes: string;
-    sourceMap: string;
-  };
-  methodIdentifiers: IMethodIdentifiers;
+  bytecode: Readonly<{
+    functionDebugData: Readonly<any>;
+    generatedSources: Readonly<any>;
+    linkReferences: Readonly<any>;
+    object: Readonly<string>;
+    opcodes: Readonly<string>;
+    sourceMap: Readonly<string>;
+  }>;
+  deployedBytecode: Readonly<{
+    functionDebugData: Readonly<any>;
+    generatedSources: Readonly<any>;
+    immutableReferences: Readonly<any>;
+    linkReferences: Readonly<any>;
+    object: Readonly<string>;
+    opcodes: Readonly<string>;
+    sourceMap: Readonly<string>;
+  }>;
+  methodIdentifiers: Readonly<IMethodIdentifiers>;
 }
 
 export interface IMetadata {
-  compiler: {
+  compiler: Readonly<{
     version: string;
-  };
-  language: "Solidity";
-  output: {
-    abi: any[];
-    devdoc: any;
-    userdoc: any;
-  };
-  settings: {
-    compilationTarget: ICompilationTarget;
-    evmVersion: string;
-    libraries: any;
-    metadata: any;
-    optimizer: {
+  }>;
+  language: Readonly<"Solidity">;
+  output: Readonly<{
+    abi: Readonly<any[]>;
+    devdoc: Readonly<any>;
+    userdoc: Readonly<any>;
+  }>;
+  settings: Readonly<{
+    compilationTarget: Readonly<ICompilationTarget>;
+    evmVersion: Readonly<string>;
+    libraries: Readonly<any>;
+    metadata: Readonly<any>;
+    optimizer: Readonly<{
       enabled: boolean;
       runs: number;
-    };
-    remappings: any[];
-  };
-  sources: ISources;
-  version: number;
+    }>;
+    remappings: Readonly<any[]>;
+  }>;
+  sources: Readonly<ISources>;
+  version: Readonly<number>;
 }
 
 export interface ICompile {
-  bytecode: IBytecode;
-  evm: IEvm;
-  metadata: IMetadata;
+  bytecode: Readonly<IBytecode>;
+  evm: Readonly<IEvm>;
+  metadata: Readonly<IMetadata>;
 }

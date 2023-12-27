@@ -1,9 +1,11 @@
+export interface IOptimizer {
+  enabled: Readonly<boolean>;
+  runs: Readonly<number>;
+}
+
 export interface IConfig {
-  optimizer: {
-    enabled: boolean;
-    runs: number;
-  };
-  outputSelection: {
+  optimizer: Readonly<IOptimizer>;
+  outputSelection: Readonly<{
     "*":
       | {
           "*":
@@ -18,5 +20,5 @@ export interface IConfig {
           "": ["ast"] | string[];
         }
       | any;
-  };
+  }>;
 }
